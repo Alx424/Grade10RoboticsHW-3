@@ -69,7 +69,7 @@ public class Main {
 
 
       teamTotals.forEach((key, val) -> {
-        System.out.println(key + " " + val + " added");
+        //System.out.println(key + " " + val + " added");
         Integer[] temp = new Integer[2];
         temp[0] = key;
         temp[1] =  val[0]/val[1];
@@ -272,20 +272,19 @@ public class Main {
 
 
       teamTotals.forEach((key, val) -> {
-        System.out.println(key + " " + val + " added");
         Integer[] temp = new Integer[2];
         temp[0] = key;
-        temp[1] =  val[0]/val[1];
+        temp[1] =  val[0]/val[1]; // adds average npm (note per match) to the list
         ranking.add(temp);
       });
 
-      // sort
+      // sorting teams by npm
       Collections.sort(ranking, new Comparator<Integer[]>() {
             public int compare(Integer[] team1, Integer[] team2) {
                 return team1[1].compareTo(team2[1]);
             }
         });
-      Collections.reverse(ranking);
+      Collections.reverse(ranking); // reverse order of teams to highest npm first
 
       System.out.println("** TEAM LEADERBOARD **");
       for(Integer[] team : ranking) {
@@ -332,11 +331,11 @@ public class Main {
     System.out.println("Avg Notes per Match: " + AVG_NOTES);
     System.out.println("Avg Speakers per Match: " + AVG_SPEAKERS);
     System.out.println("Avg Amps per Match: " + AVG_AMPS);
-    System.out.println(TOTAL_PARKS);
+    // System.out.println(TOTAL_PARKS);
     System.out.println("Park: " + PARK_PERCENT + "%");
-    System.out.println(TOTAL_CLIMBS);
+    // System.out.println(TOTAL_CLIMBS);
     System.out.println("Climb: " + CLIMB_PERCENT + "%");
-    System.out.println(TOTAL_TRAPS);
+    // System.out.println(TOTAL_TRAPS);
     System.out.println("Trap: " + TRAP_PERCENT + "%");
     
     return;
